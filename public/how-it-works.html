@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How the list works · Brine Wold</title>
+    <style>
+      :root { font-family: system-ui, sans-serif; color: #1c1c1c; background: #fafaf7; }
+      body { margin: 0; }
+      header, main, footer { max-width: 44rem; margin: 0 auto; padding: 1.25rem 1rem; }
+      header { display: flex; justify-content: space-between; align-items: center; }
+      header a { color: #2f7d4f; }
+      .mark { font-weight: 700; color: #2f7d4f; }
+      /* Intentional, for Impeccable's test drive: gradient text on the heading. */
+      h1 {
+        font-size: clamp(2rem, 6vw, 3rem);
+        margin: 2rem 0 1rem;
+        background: linear-gradient(90deg, #2f7d4f, #c2410c);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      /* Intentional, for Impeccable's test drive: low-contrast grey text. */
+      .lede { color: #c9c9c4; font-size: 1.15rem; line-height: 1.5; }
+      /* Intentional, for Impeccable's test drive: body text flush with the viewport edge, no background. */
+      .edge { margin: 0 calc(50% - 50vw); padding: 0; line-height: 1.6; }
+      table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+      th, td { text-align: left; padding: 0.5rem; border-bottom: 1px solid #e5e5e0; }
+      .steps { padding-left: 1.2rem; line-height: 1.8; }
+      /* Intentional, for Impeccable's test drive: link text under the 11px floor. */
+      .small-link { font-size: 10px; }
+      /* Intentional, for Impeccable's test drive: transition on a layout property. */
+      .meter { height: 0.75rem; width: 40%; background: #2f7d4f; border-radius: 0.4rem; transition: width 0.3s; }
+      .meter:hover { width: 100%; }
+      /* Intentional, for Impeccable's test drive: colour outside the site's palette. */
+      .note { border-left: 4px solid #7c3aed; padding-left: 0.75rem; }
+      footer { color: #777; font-size: 0.9rem; border-top: 1px solid #e5e5e0; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <span class="mark">Brine Wold</span>
+      <a href="/">Home</a>
+    </header>
+    <main>
+      <h1>How the list works</h1>
+      <p class="lede">Every item on the Brine Wold list is shared, so what you add shows up for everyone the moment it is saved.</p>
+      <p class="edge">Items are stored in one shared table and read back whenever the page loads, which keeps the list the same on every device.</p>
+      <ol class="steps">
+        <li>Open the landing page and scroll to the live list.</li>
+        <li>Read the items other people have added.</li>
+        <li>Add your own and watch it appear.</li>
+      </ol>
+      <table>
+        <thead>
+          <tr><th>Item</th><th>Owner</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Pack salt for the coast trip</td><td>Mara</td><td>Open</td></tr>
+          <tr><td>Renew the harbour pass</td><td>Idris</td><td>Done</td></tr>
+          <tr><td>Book the ferry</td><td>Noor</td><td>Open</td></tr>
+        </tbody>
+      </table>
+      <div class="meter" role="img" aria-label="Two of five items open"></div>
+      <p class="note">Two of five items are still open this week.</p>
+      <a class="small-link" href="/#live">Back to the live list</a>
+    </main>
+    <footer>Brine Wold</footer>
+  </body>
+</html>
